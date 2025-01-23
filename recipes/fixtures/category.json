@@ -1,0 +1,10 @@
+[
+  {
+    "model": "recipes.category",
+    "pk": 4,
+    "fields": {
+      "name": "Салаты",
+      "description": ""
+    }
+  }
+]

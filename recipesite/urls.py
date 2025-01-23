@@ -18,12 +18,21 @@ from django.contrib import admin
 from django.urls import path, include  # include нужно для подключения маршрутов приложения
 from django.conf import settings
 from django.conf.urls.static import static
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('recipes/', include('recipes.urls')),  # Подключение маршрутов приложения recipes
+    path('admin/doc/', include('django.contrib.admindocs.urls')),
+    path("admin/", admin.site.urls),
+    path("recipes/", include("recipes.urls")),  # Подключение маршрутов приложения recipes
+    path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
+    path("api/schema/swagger/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger"),
+    path("api/schema/redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc"),
+    path("api/", include("myapiapp.urls")),
 ]
 
 # Обработка медиа-файлов в режиме разработки
 if settings.DEBUG:
+    urlpatterns += [
+        path("__debug__/", include("debug_toolbar.urls")),
+    ]
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

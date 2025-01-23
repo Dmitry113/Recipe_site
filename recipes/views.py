@@ -1,3 +1,4 @@
+import logging
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
@@ -5,13 +6,15 @@ from .forms import RecipeForm
 from django.shortcuts import render, get_object_or_404
 from .models import Recipe
 
+
+log = logging.getLogger(__name__)
+
 # Главная страница
 def home(request):
     recipes = Recipe.objects.all()  # Получаем все рецепты из базы данных
     return render(request, 'recipes/home.html', {'recipes': recipes})
 
 
-# Добавление рецепта
 # Добавление или редактирование рецепта
 def recipe_form(request, recipe_id=None):  # Используем recipe_id для идентификации рецепта
     if not request.user.is_authenticated:
