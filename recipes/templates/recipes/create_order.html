@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<h2>Создать заказ</h2>
+<form method="post">
+    {% csrf_token %}
+
+    <!-- Поле для пользователя -->
+    <div>
+        <label for="{{ form.user.id_for_label }}">Заказчик:</label>
+        {{ form.user }}
+        {% if form.user.errors %}
+            <ul class="errors">
+                {% for error in form.user.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <!-- Поле для рецепта -->
+    <div>
+        <label for="{{ form.recipe.id_for_label }}">Название рецепта:</label>
+        {{ form.recipe }}
+        {% if form.recipe.errors %}
+            <ul class="errors">
+                {% for error in form.recipe.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <!-- Поле для количества -->
+    <div>
+        <label for="{{ form.quantity.id_for_label }}">Количество:</label>
+        {{ form.quantity }}
+        {% if form.quantity.errors %}
+            <ul class="errors">
+                {% for error in form.quantity.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <!-- Поле для адреса доставки -->
+    <div>
+        <label for="{{ form.delivery_address.id_for_label }}">Адрес доставки:</label>
+        {{ form.delivery_address }}
+        {% if form.delivery_address.errors %}
+            <ul class="errors">
+                {% for error in form.delivery_address.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <!-- Поле для номера телефона -->
+    <div>
+        <label for="{{ form.phone_number.id_for_label }}">Номер телефона:</label>
+        {{ form.phone_number }}
+        {% if form.phone_number.errors %}
+            <ul class="errors">
+                {% for error in form.phone_number.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <!-- Поле для подарочной упаковки -->
+    <div>
+        <label for="{{ form.gift_wrapping.id_for_label }}">Подарочная упаковка:</label>
+        {{ form.gift_wrapping }}
+        {% if form.gift_wrapping.errors %}
+            <ul class="errors">
+                {% for error in form.gift_wrapping.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <!-- Поле для промо-кода -->
+    <div>
+        <label for="{{ form.promo_code.id_for_label }}">Промо-код:</label>
+        {{ form.promo_code }}
+        {% if form.promo_code.errors %}
+            <ul class="errors">
+                {% for error in form.promo_code.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <button type="submit">Создать заказ</button>
+</form>
+{% endblock %}
+

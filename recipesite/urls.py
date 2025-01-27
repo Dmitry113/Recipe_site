@@ -28,6 +28,7 @@ urlpatterns = [
     path("api/schema/swagger/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger"),
     path("api/schema/redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc"),
     path("api/", include("myapiapp.urls")),
+    path('contacts/', include('contacts.urls')),
 ]
 
 # Обработка медиа-файлов в режиме разработки
@@ -36,3 +37,5 @@ if settings.DEBUG:
         path("__debug__/", include("debug_toolbar.urls")),
     ]
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

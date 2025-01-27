@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="order-container">
+    <h2>Заказ успешно создан!</h2>
+    <p>Спасибо за ваш заказ. Мы свяжемся с вами в ближайшее время.</p>
+
+    <h3>Ваш заказ:</h3>
+    <ul>
+        <li><strong>Пользователь:</strong> {{ order.user }}</li>
+        <li><strong>Рецепт:</strong> {{ order.recipe }}</li>
+        <li><strong>Количество:</strong> {{ order.quantity }}</li>
+        <li><strong>Дата создания:</strong> {{ order.created_at }}</li>
+    </ul>
+
+    <div class="btn-group">
+        <a href="{% url 'home' %}" class="btn btn-primary">Вернуться на главную</a>
+        <a href="{% url 'create_order' %}" class="btn btn-secondary">Создать новый заказ</a>
+        <a href="{% url 'orders_list' %}" class="btn btn-secondary">Посмотреть все заказы</a>
+    </div>
+</div>
+{% endblock %}
+

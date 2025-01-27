@@ -1,10 +1,18 @@
 [
-  {
-    "model": "recipes.category",
-    "pk": 4,
-    "fields": {
-      "name": "—‡Î‡Ú˚",
-      "description": ""
+    {
+        "model": "recipes.category",
+        "pk": 4,
+        "fields": {
+            "name": "–°–∞–ª–∞—Ç—ã",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.category",
+        "pk": 5,
+        "fields": {
+            "name": "–°—É–ø—ã",
+            "description": ""
+        }
     }
-  }
 ]

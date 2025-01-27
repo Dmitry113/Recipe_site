@@ -1,42 +1,7 @@
-2025-01-20 19:49:28,093 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-
-12 3232025-01-20 19:56:53,130 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipesite\settings.py changed, reloading.
-2025-01-20 19:56:53,527 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-22 11:07:59,350 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-22 11:08:09,999 [WARNING] django.request Not Found: /
-2025-01-22 11:08:10,106 [WARNING] django.request Not Found: /favicon.ico
-2025-01-22 11:37:43,938 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipesite\settings.py changed, reloading.
-2025-01-22 11:37:44,413 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-22 11:42:27,293 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\myapiapp\views.py changed, reloading.
-2025-01-22 11:42:27,693 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-22 11:42:57,410 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\myapiapp\views.py changed, reloading.
-2025-01-22 11:42:57,805 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-22 12:12:53,188 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\myapiapp\views.py changed, reloading.
-2025-01-22 12:12:53,630 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-22 12:25:07,975 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\myapiapp\views.py changed, reloading.
-2025-01-22 12:25:08,425 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-22 13:12:37,156 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipes\views.py changed, reloading.
-2025-01-22 13:12:37,637 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-22 13:37:22,478 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipesite\settings.py changed, reloading.
-2025-01-22 13:37:22,934 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-22 14:54:50,038 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipesite\urls.py changed, reloading.
-2025-01-22 14:54:51,227 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-22 14:55:57,437 [WARNING] django.request Not Found: /a6b6d6494d34d2b1b721.worker.js.map
-2025-01-22 15:09:42,385 [WARNING] django.request Not Found: /a6b6d6494d34d2b1b721.worker.js.map
-2025-01-22 19:40:31,244 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipes\forms.py changed, reloading.
-2025-01-22 19:40:31,879 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-23 12:37:29,109 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-23 12:37:34,409 [WARNING] django.request Not Found: /
-2025-01-23 12:37:34,519 [WARNING] django.request Not Found: /favicon.ico
-2025-01-23 12:40:13,508 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipesite\urls.py changed, reloading.
-2025-01-23 12:40:14,042 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-23 12:40:47,954 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipesite\urls.py changed, reloading.
-2025-01-23 12:40:48,439 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-23 12:41:06,678 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipesite\urls.py changed, reloading.
-2025-01-23 12:41:07,183 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-23 14:22:23,328 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipesite\settings.py changed, reloading.
-2025-01-23 14:22:24,003 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-23 14:33:22,841 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipesite\settings.py changed, reloading.
-2025-01-23 14:33:23,368 [INFO] django.utils.autoreload Watching for file changes with StatReloader
-2025-01-23 15:13:36,964 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipesite\settings.py changed, reloading.
-2025-01-23 15:13:37,519 [INFO] django.utils.autoreload Watching for file changes with StatReloader
+2025-01-27 19:00:38,540 [INFO] recipes.views Главная страница загружена
+2025-01-27 19:00:43,255 [INFO] recipes.views Главная страница загружена
+2025-01-27 19:02:23,953 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipesite\settings.py changed, reloading.
+2025-01-27 19:03:20,381 [INFO] django.utils.autoreload Watching for file changes with StatReloader
+2025-01-27 19:04:07,208 [INFO] django.utils.autoreload K:\GeekBrains\Final_attestation\RecipeSite\recipesite\recipesite\settings.py changed, reloading.
+2025-01-27 19:05:49,931 [INFO] django.utils.autoreload Watching for file changes with StatReloader
+2025-01-27 19:05:58,397 [INFO] recipes.views Главная страница загружена

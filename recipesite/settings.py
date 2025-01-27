@@ -16,11 +16,15 @@ import os
 
 from django.template.context_processors import media
 
+DEFAULT_CHARSET = "utf-8"
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATABASE_DIR = BASE_DIR / "database"
 DATABASE_DIR.mkdir(exist_ok=True)
 
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -32,7 +36,7 @@ SECRET_KEY = getenv(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv("DJANGO_DEBUG", "0") == "1"
+DEBUG = getenv("DJANGO_DEBUG", "1") == "1"
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
@@ -58,6 +62,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.admindocs",
 
+    "contacts",
+
     "debug_toolbar",
     "rest_framework",
     "django_filters",
@@ -65,9 +71,6 @@ INSTALLED_APPS = [
 
     "recipes.apps.MainConfig",
     "myapiapp.apps.MyapiappConfig",
-
-
-
 
 ]
 
@@ -80,6 +83,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.admindocs.middleware.XViewMiddleware",
+    # "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "recipesite.urls"

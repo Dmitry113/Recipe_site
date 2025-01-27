@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="order-list-container">
+    <h2>Список заказов</h2>
+
+    <!-- Кнопка на главную страницу -->
+    <div class="navigation">
+        <a href="{% url 'home' %}" class="btn btn-primary">На главную</a>
+    </div>
+
+    {% if orders %}
+        <ul class="order-list">
+            {% for order in orders %}
+                <li class="order-item">
+                    <p><strong>Пользователь:</strong> {{ order.user.username }}</p>
+                    <p><strong>Рецепт:</strong> {{ order.recipe.title }}</p>
+                    <p><strong>Количество:</strong> {{ order.quantity }}</p>
+                    <p><strong>Дата заказа:</strong> {{ order.created_at|date:"d M Y, H:i" }}</p>
+                    <a href="{% url 'delete_order' order.id %}" class="delete-order">Удалить заказ</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-orders">Нет заказов.</p>
+    {% endif %}
+</div>
+{% endblock %}

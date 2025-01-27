@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="contact-form-container">
+    <h2>Контакты</h2>
+    <p>Если у вас есть вопросы или предложения, заполните форму ниже, и мы свяжемся с вами в ближайшее время.</p>
+
+    <form method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+        <div>
+            <label for="{{ form.name.id_for_label }}">Имя:</label>
+            {{ form.name }}
+            {% if form.name.errors %}
+                <ul class="errors">
+                    {% for error in form.name.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div>
+            <label for="{{ form.email.id_for_label }}">Электронная почта:</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+                <ul class="errors">
+                    {% for error in form.email.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div>
+            <label for="{{ form.phone.id_for_label }}">Номер телефона:</label>
+            {{ form.phone }}
+            {% if form.phone.errors %}
+                <ul class="errors">
+                    {% for error in form.phone.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div>
+            <label for="{{ form.message.id_for_label }}">Сообщение:</label>
+            {{ form.message }}
+            {% if form.message.errors %}
+                <ul class="errors">
+                    {% for error in form.message.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+{% endblock %}

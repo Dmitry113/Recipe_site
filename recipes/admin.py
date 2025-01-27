@@ -1,15 +1,24 @@
 from django.contrib import admin
-from .models import Recipe, Category
+from .models import Category, Recipe
+from .models import Order
 
-# Настроим отображение модели Recipe в админке
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description')  # Отображаемые поля в списке категорий
+    search_fields = ('name',)  # Поля для поиска
+    ordering = ('name',)  # Сортировка по имени
+
+@admin.register(Recipe)
 class RecipeAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'cooking_time', 'image')  # Здесь указываем, какие поля будут отображаться в списке
-    search_fields = ('title', 'author__username')  # По каким полям будем искать
-    list_filter = ('author', 'categories')  # Фильтрация по автору и категориям
+    list_display = ('title', 'cooking_time', 'author')  # Отображаемые поля в списке рецептов
+    search_fields = ('title', 'author__username')  # Поля для поиска
+    list_filter = ('categories',)  # Фильтр по категориям
+    ordering = ('title',)
 
-    # Поля на форме редактирования
-    fields = ('title', 'description', 'cooking_time', 'steps', 'image', 'author', 'categories')
-
-# Зарегистрируем модель Recipe и Category с настройками админки
-admin.site.register(Recipe, RecipeAdmin)
-admin.site.register(Category)
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ('id', 'user', 'recipe', 'quantity', 'created_at')  # Поля для отображения в списке
+    search_fields = ('user__username', 'recipe__title')  # Поля для поиска
+    list_filter = ('created_at', 'recipe')  # Поля для фильтрации
+    ordering = ('-created_at',)  # Сортировка записей

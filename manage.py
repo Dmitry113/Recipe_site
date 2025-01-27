@@ -2,11 +2,15 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+import locale
 
 def main():
     """Run administrative tasks."""
+    # Установка принудительного использования UTF-8
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "recipesite.settings")
+    if locale.getpreferredencoding() != "UTF-8":
+        os.environ["PYTHONIOENCODING"] = "utf-8"  # Устанавливаем для stdin/stdout/stderr
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -20,3 +24,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

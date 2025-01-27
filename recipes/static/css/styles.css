@@ -1,4 +1,4 @@
-
+/* Основной стиль для страниц */
 body {
     background-image: url("../images/img6.jpg");
     font-family: Arial, sans-serif;
@@ -14,11 +14,69 @@ body {
     color: #68e46f;
 }
 
+/* Стили для шапки */
 header {
     background-color: #68e46f;
     color: white;
-    padding: 10px;
+    padding: 5px 20px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Логотип и его ссылка */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo {
+    max-width: 40px;
+    height: auto;
+    margin-right: 10px; /* Отступ между логотипом и текстом */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Название сайта */
+header h1 {
     text-align: center;
+    margin: 0;
+    font-size: 28px;
+    color: white;
+}
+
+/* Стили для контактов */
+.site-contacts {
+    text-align: right;
+    font-size: 14px;
+    color: white;
+}
+
+.site-contacts span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.site-contacts a {
+    color: white;
+    text-decoration: none;
+}
+
+.site-contacts a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для навигации */
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
 header nav a {
@@ -31,34 +89,426 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-
-h2 {
-    color: #333;
-    text-align: center;
-    padding: 50px;
+/* Формы (Добавить рецепт, Заказ) */
+form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
-ul {
-    color: orange;
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 60px;
+    font-size: 25px;
+    color: #333;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Центрирование блоков */
+.contact-form-container,
+.recipe-form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 400px) {
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-contacts {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .logo {
+        max-width: 40px; /* Уменьшаем логотип для мобильных устройств */
+    }
+
+    header nav {
+        margin-top: 15px;
+    }
+
+    header nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/*Стили для отображения рецептов на главной странице*/
+
+.home-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Список рецептов */
+.recipe-list {
     list-style-type: none;
     padding: 0;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 0 auto;
 }
 
-li {
-    background: white;
-    color: red;
-    margin: 10px 0;
+/* Элементы списка */
+.recipe-item {
+text-align: center;
+    margin-bottom: 20px;
     padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
 }
 
-img {
+/* Заголовок рецепта */
+.recipe-title {
     display: block;
-    margin-top: 10px;
-    max-width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.recipe-title:hover {
+    text-decoration: underline;
+}
+
+/* Изображение рецепта */
+.recipe-image {
+    width: 150px; /* Фиксированная ширина */
+    height: 150px; /* Фиксированная высота */
+    object-fit: cover; /* Обрезка изображения для сохранения пропорций */
+    border-radius: 10px; /* Закруглённые углы */
+    display: block; /* Выравнивание по центру */
+    margin: 0 auto; /* Центрирование изображения */
+    border: 1px solid #ddd; /* Лёгкая рамка вокруг изображения */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+}
+
+/* Основной контейнер для рецепта */
+.recipe-container {
+    max-width: 800px;
+    margin: 20px auto; /* Центрирование на странице */
+    padding: 20px;
+    background-color: #f9f9f9; /* Светлый фон */
+    border-radius: 10px; /* Закруглённые углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+    font-family: Arial, sans-serif; /* Шрифт для текста */
+    line-height: 1.6; /* Увеличенный межстрочный интервал */
+}
+
+/* Заголовок рецепта */
+.recipe-container h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Абзацы с описанием */
+.recipe-container p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Изображение рецепта */
+.recipe-container img {
+    display: block;
+    max-width: 100%; /* Адаптивное изображение */
     height: auto;
+    border-radius: 10px; /* Закруглённые углы */
+    margin: 20px auto; /* Центрирование изображения */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для изображения */
+    border: 1px solid #ddd; /* Рамка */
+}
+
+/* Ссылки на редактирование */
+.recipe-container a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Зелёная кнопка */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; /* Закруглённые углы */
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.recipe-container a:hover {
+    background-color: #45a049; /* Темно-зелёный цвет при наведении */
+}
+
+/* Категории рецепта */
+.recipe-container strong {
+    color: #333; /* Цвет текста */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+    .recipe-container {
+        padding: 15px;
+    }
+
+    .recipe-container h2 {
+        font-size: 22px;
+    }
+
+    .recipe-container p {
+        font-size: 14px;
+    }
+
+    .recipe-container a {
+        font-size: 12px;
+    }
+}
+
+/* Основной контейнер для страницы заказа */
+.order-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Заголовок страницы */
+.order-container h2 {
+    text-align: center;
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Описание заказа */
+.order-container p {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Список информации о заказе */
+.order-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-container li {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.order-container li strong {
+    color: #333;
+}
+
+/* Группа кнопок */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Кнопки */
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
     border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .order-container {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/*Стиль для списка сделанных заказов*/
+
+.order-list-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.order-list-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.order-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.order-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-item strong {
+    color: #333;
+}
+
+.order-item p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.no-orders {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+}
+
+/* Дополнительные стили для пустого списка */
+.no-orders p {
+    font-size: 20px;
+    color: #e74c3c;
+}
+
+/* Стили для кнопок навигации списка заказов */
+.navigation {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navigation .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navigation .btn-primary {
+    background-color: #4CAF50;
+}
+
+.navigation .btn-secondary {
+    background-color: #6c757d;
+}
+
+.navigation .btn:hover {
+    opacity: 0.9;
+}
+
+/*Удаление заказа*/
+
+.delete-order {
+    color: #d9534f; /* Красный цвет для удаления */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 1px solid #d9534f;
+    border-radius: 3px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.delete-order:hover {
+    background-color: #d9534f;
+    color: white;
+}
+
+.delete-order:active {
+    background-color: #c9302c;
 }
